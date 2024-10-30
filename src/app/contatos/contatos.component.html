@@ -1,5 +1,5 @@
 <form>
-  <img src="assets/usuario.png">
+  <img src="assets/usuario.png" class="imagem-redimensionada">
 
   <input type="text"   placeholder="Nome"   class="form-control" name="nome" [(ngModel)]="contato.nome">
   <input type="number" placeholder="Telefone"  class="form-control" name="telefone"  [(ngModel)]="contato.telefone">
@@ -20,9 +20,6 @@
           <th>Selecionar</th>
       </tr>
   </thead>
-
-
-
   <tbody>
       <tr *ngFor="let c of contatos; index as i">
          <td>{{i + 1}}</td>

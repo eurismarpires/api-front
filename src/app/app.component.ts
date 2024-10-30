@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { ContatosComponent } from "./contatos/contatos.component";
 import { PrincipalComponent } from "./principal/principal.component";
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MenuComponent } from "./menu/menu.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PrincipalComponent, ContatosComponent, HttpClientModule],
+  imports: [RouterOutlet,RouterLink, RouterModule, PrincipalComponent, ContatosComponent, MenuComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
