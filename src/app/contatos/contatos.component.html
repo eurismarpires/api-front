@@ -2,8 +2,15 @@
   <img src="assets/usuario.png" class="imagem-redimensionada">
 
   <input type="text"   placeholder="Nome"   class="form-control" name="nome" [(ngModel)]="contato.nome">
+  <input type="text"   placeholder="CPF"   class="form-control" name="cpf" [(ngModel)]="contato.CPF">
   <input type="number" placeholder="Telefone"  class="form-control" name="telefone"  [(ngModel)]="contato.telefone">
   <input type="text"   placeholder="Email" class="form-control" name="email"  [(ngModel)]="contato.email">
+
+  <input type="text"   placeholder="Endereço" class="form-control" name="email"  [(ngModel)]="contato.endereco">
+  <input type="text"   placeholder="Bairro" class="form-control" name="bairro"  [(ngModel)]="contato.bairro">
+  <input type="text"   placeholder="Cidade" class="form-control" name="cidade"  [(ngModel)]="contato.cidade">
+  <input type="text"   placeholder="UF" class="form-control" name="uf"  [(ngModel)]="contato.UF">
+  <input type="text"   placeholder="CEP" class="form-control" name="cep"  [(ngModel)]="contato.CEP">
 
   <input type="button" value="Cadastrar" *ngIf="btnCadastro"  class="btn btn-primary" (click)="cadastrar()">
   <input type="button" value="Alterar"   *ngIf="!btnCadastro" class="btn btn-warning" (click)="editar()">
