@@ -8,7 +8,7 @@ import { Contato } from '../modelo/Contato';
 })
 export class ContatoService {
 
-  private url: string = 'http://localhost:8080';
+  private url: string = 'https://api-advsoft-c71e696f360a.herokuapp.com/';
 
   constructor(private http: HttpClient) { }
 
