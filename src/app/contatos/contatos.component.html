@@ -20,7 +20,7 @@
 <table class="table" *ngIf="tabela">
   <thead>
       <tr>
-          <th>#</th>
+          <th>Código</th>
           <th>Nome</th>
           <th>Telefone</th>
           <th>Email</th>
@@ -28,12 +28,12 @@
       </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let c of contatos; index as i">
-         <td>{{i + 1}}</td>
+      <tr *ngFor="let c of contatos">
+         <td>{{c.codigo}}</td>
          <td>{{c.nome}}</td>
          <td>{{c.telefone}}</td>
          <td>{{c.email}}</td>
-         <td><button class="btn btn-success" (click)="selecionarContato(i)">Selecionar</button></td>
+         <td><button class="btn btn-success" (click)="selecionarContato(c.codigo)">Selecionar</button></td>
       </tr>
   </tbody>
 </table>

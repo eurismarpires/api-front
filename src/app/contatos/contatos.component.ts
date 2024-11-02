@@ -43,7 +43,7 @@ export class ContatosComponent {
     this.servico.editar(this.contato)
       .subscribe(retorno => {
         let posicao = this.contatos.findIndex(obj => {
-          return obj.codigo = retorno.codigo;
+          return obj.codigo === retorno.codigo;
         })
         this.contatos[posicao] = retorno;
       });
@@ -60,23 +60,22 @@ export class ContatosComponent {
   remover(): void {
     this.servico.remover(this.contato.codigo)
       .subscribe(retorno => {
-        let posicao = this.contatos.findIndex(obj => {
-          return obj.codigo = this.contato.codigo;
-        })
-
-        this.contatos.splice(posicao, 1);
-      })
-
-    this.contato = new Contato();
-    this.btnCadastro = true;
-    this.tabela = true;
-    alert('Contato removido com sucesso!');
+        this.contatos = this.contatos.filter(contato => contato.codigo !== this.contato.codigo);
+        this.contato = new Contato();
+        this.btnCadastro = true;
+        this.tabela = true;
+        alert('Contato removido com sucesso!');
+      });
+}
 
 
-  }
-
-  selecionarContato(posicao: number): void {
-    this.contato = this.contatos[posicao];
+  selecionarContato(codigo: number): void {
+    const contatoEncontrado = this.contatos.find(contato => contato.codigo === codigo);
+    if (contatoEncontrado) {
+        this.contato = contatoEncontrado;
+    } else {
+        console.error('Contato não encontrado');
+    }
     this.btnCadastro = false;
     this.tabela = false;
   }

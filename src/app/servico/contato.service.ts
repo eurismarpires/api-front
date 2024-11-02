@@ -22,6 +22,7 @@ export class ContatoService {
   }
 
   editar(obj: Contato): Observable<Contato> {
+    console.log("editando o contato com o codigo = " + obj.codigo);
     return this.http.put<Contato>(this.url, obj);
   }
 
