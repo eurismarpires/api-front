@@ -8,7 +8,7 @@ import { Contato } from '../modelo/Contato';
 })
 export class ContatoService {
 
-  private url: string = 'https://api-advsoft-c71e696f360a.herokuapp.com/';
+  private url: string = 'https://api-advsoft-c71e696f360a.herokuapp.com/contato';
 
   constructor(private http: HttpClient) { }
 
